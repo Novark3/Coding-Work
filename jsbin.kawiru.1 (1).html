@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by Novark3 (http://jsbin.com/kawiru/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Word Counter</title>
+    <style id="jsbin-css">
+        #wordReset {
+            position: relative;
+            top: -250px;
+            left: -270px
+        }
+        #outputNum {
+            position: relative;
+            top: -450px;
+            left: 230px
+        }
+        #outputChar {
+            position: relative;
+            top: -225px;
+            left: 115px
+        }
+        #outputSent {
+            position: relative;
+            top: -0px;
+            left: 10px
+        }
+        #navbar {
+            text-align:center;
+        }
+        #navbar li {
+            display:inline-block;
+            border: 2px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html"> Intro Page </a>
+            </li>
+            <li><a href="jsbin.foyinolefa.1 (1).html"> DNA to RNA Translator </a>
+            </li>
+            <li><a href="jsbin.gosohakaza.1 (1).html"> Calculator </a>
+            </li>
+            <li><a href="jsbin.qefericiku.1 (1).html"> Random History Project </a>
+            </li>
+            <li><a href="Maze Game (1).html"> Cursor Game </a>
+            </li>
+            <li><a href="jsbin.kawiru.1 (1).html"> Word Counter </a>
+            </li>
+            <li><a href="vindinium.html"> AI Bot </a>
+            </li>
+        </ul>
+    </div>
+    <textarea rows="30" cols="50" id="wordList" onkeypress="runTxtAnlz()">Input text here!</textarea>
+    <!--<button type="button" onclick="runTxtAnlz()" id="wordCount">Get Everything Count</button>-->
+    <textarea rows="2" cols="10" id="outputNum">Number of Words</textarea>
+    <textarea rows="2" cols="10" id="outputChar">Number of Characters</textarea>
+    <textarea rows="2" cols="10" id="outputSent">Number of Sentences</textarea>
+    <button type="button" onclick="reset()" id="wordReset">Reset Everything</button>
+    <script id="jsbin-javascript">
+        //@Desc: This function runs onclick of the Get Word Count button and runs the different functions required to analyze the text.
+
+        function runTxtAnlz() {
+            wordNum();
+            wordMinus();
+        }
+         //global variables to contain information
+        var area = document.getElementById("wordList");
+        var outPut = document.getElementById("outputNum");
+         //@Desc: This function finds seperates the value of the textarea and pushes it into an array. It also changes the small box to the number of words in the larger textarea.
+
+        function wordNum() {
+            var wordSplit = area.value;
+            var numOfWords = wordSplit.split(" ");
+            var numOfSpaces = wordSplit.split("");
+            var numOfSent = 0;
+            var extraSpace = numOfSpaces.length;
+            for(i = 0; i < numOfSpaces.length; i++) {
+                if(numOfSpaces[i] === " " && numOfSpaces[i++] == numOfSpaces[i]) {
+                    numOfWords.length -= 2;
+                }
+            }
+            for(j = 0; j < numOfSpaces.length; j++) {
+                if(numOfSpaces[j] === "." || numOfSpaces[j] === "?" || numOfSpaces[j] === "!") {
+                    numOfSent++;
+                }
+            }
+            if(numOfSpaces[extraSpace] === " ") {
+                numOfWords--;
+            }
+            var essay = {
+                words: numOfWords.length,
+                sentences: numOfSent,
+                characters: numOfSpaces.length
+            };
+            document.getElementById("outputSent").innerHTML = essay.sentences;
+            document.getElementById("outputChar").innerHTML = essay.characters;
+            outPut.innerHTML = essay.words;
+        }
+         //@Desc: This function resets all of the different textareas
+
+        function reset() {
+            area.value = ("Input text here!");
+            document.getElementById("outputSent").innerHTML = ("Number of Sentences");
+            document.getElementById("outputChar").innerHTML = ("Number of Characters");
+            outPut.innerHTML = ("Number of Words");
+        }
+         //@Desc: This function gives focus to the main textarea
+        window.onload = function() {
+            document.getElementById("wordList").focus();
+        };
+         //@Desc: This function is supposed to minus 1 from the length of wordSplit but it doesn't seem to work
+
+        function wordMinus() {}
+         //This stuff is just extra code that almost worked but wasn't used. It was saved just in case.
+         //var spaces = area.search("");
+         //wordSplit.splice(spaces, 1);
+         //console.log(spaces);
+        /* else {
+          for (i = 0; i < numOfSpaces.length; i++){
+          if(numOfSpaces[i++] === ""){
+            numOfWords.length--;
+          }
+          }
+     }*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <title>Maze Game</title>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html"> Intro Page </a>
+            </li>
+            <li><a href="jsbin.foyinolefa.1 (1).html"> DNA to RNA Translator </a>
+            </li>
+            <li><a href="jsbin.gosohakaza.1 (1).html"> Calculator </a>
+            </li>
+            <li><a href="jsbin.qefericiku.1 (1).html"> Random History Project </a>
+            </li>
+            <li><a href="Maze Game (1).html"> Cursor Game </a>
+            </li>
+            <li><a href="jsbin.kawiru.1 (1).html"> Word Counter </a>
+            </li>
+            <li><a href="vindinium.html"> AI Bot </a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="startButton">START</div>
+    <div id="firstMaze" style="display:none">
+        <br>
+        <div class="maze1 fail">/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////</div>
+        <br>
+        <div class="maze3 fail">
+            ///
+        </div>
+        <div class="maze9 fail">///</div>
+        <div class="maze1 fail">///////////////////////////////////////////////////////////////////////////////////////////////////////////</div>
+        <div class="maze2 fail">///</div>
+        <div class="maze11 fail">///</div>
+        <br>
+        <div class="maze4 fail">///</div>
+        <div class="maze5 fail">///</div>
+        <br>
+        <div class="maze6 fail">///</div>
+        <div class="maze10 fail">///</div>
+        <br>
+        <div class="maze7 fail">///</div>
+        <div class="maze8 fail">///</div>
+        <br>
+        <div id="finishLine" class="visibility">...
+        </div>
+</body>
+
+</html>
+
+
+
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <style id="jsbin-css">
+        #navbar {
+            text-align:center;
+        }
+        #navbar li {
+            display:inline-block;
+            border: 2px solid black;
+            padding: 5px;
+        }
+        .maze1 {
+            float: left;
+            width: 430px;
+        }
+        .maze3 {
+            text-align: right;
+            width: 12px;
+            height: 20px;
+            position: relative;
+            right: -455px;
+        }
+        .visibility {
+            display: inline;
+            position: relative;
+            right: -430px;
+        }
+        .maze2 {
+            display:inline;
+            position: relative;
+            right: -415px;
+        }
+        .maze4 {
+            display:inline;
+            position: relative;
+            right: -450px
+        }
+        .maze5 {
+            display:inline;
+            position: relative;
+            right: -398px
+        }
+        .maze6 {
+            display: inline;
+            position: relative;
+            right: -412px
+        }
+        .maze7 {
+            display: inline;
+            position: relative;
+            right: -412px
+        }
+        .maze8 {
+            display: inline;
+            position: relative;
+            right: -430px
+        }
+        .maze9 {
+            display: inline;
+            position: relative;
+            right: -23px;
+        }
+        .maze10 {
+            display: inline;
+            position: relative;
+            right:-434px;
+        }
+        #startButton {
+            border:2px solid black;
+            display:inline-block;
+            vertical-align:top;
+        }
+        .maze11 {
+            display: inline;
+            position: relative;
+            right: -435px;
+        }
+    </style>
+</head>
+
+
+<script id="jsbin-javascript">
+    var level = 0;
+    var start = 0;
+    var lose = 0;
+    var failSpots = document.querySelectorAll("div.fail");
+    //This function is adding one to the variable "level" to progress to the next level.
+    document.getElementById("finishLine").onmouseover = function() {
+        nextLevel();
+    };
+
+    function nextLevel() {
+        level++;
+        if(level == 1) {
+            level++;
+            document.getElementById("firstMaze").innerHTML = "Good Job! You Won!";
+            document.getElementById("startButton").style.display = "none";
+        }
+    }
+    //This is the start button for the game
+    document.getElementById("startButton").onmouseover = function() {
+        startLevel();
+    };
+
+    function startLevel() {
+        if(start === 0) {
+            start++;
+            document.getElementById("firstMaze").style.display = "inline-block";
+            /*= "<div id='firstMaze'> <p class='maze1 fail' >\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</p><br><p class='maze3' >\\\</p><p class='maze1 fail'>\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\</p><p class='maze2 fail' >\\\</p><br><p class='maze4 fail' >\\\</p><p class='maze5 fail' >\\\</p><br><p class='maze6 fail' >\\\</p><p class='maze10 fail' >\\\</p><br> <p class='maze7 fail' >\\\</p><p class='maze8 fail' >\\\</p> <br><p id='finishLine' class='visibility'>...</p>";
+             */
+        }
+    }
+    //This spawns a fail screen if you touch a wall
+
+    function touch() {
+        lose++;
+        if(lose == 1) {
+            lose++;
+            document.getElementById("firstMaze").innerHTML = "YOU FAILED. TRY AGAIN";
+            document.getElementById("startButton").style.display = "none";
+        }
+    }
+    //This is to make the hitboxes of all the walls
+    for(var i = 0; i < failSpots.length; i++) {
+        failSpots[i].addEventListener("mouseenter", touch);
+    }
+    //This is going to make the next level
+    /*if (level == 1){
+  document.getElementById("firstMaze").innerHTML = "//////////";
+}*/
+</script>

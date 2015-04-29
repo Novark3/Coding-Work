@@ -1,0 +1,51 @@
+/*
+    Document   : indexstyle.css
+    Created on : 2015-04-28 04:50 PM
+    Author     : Novark3
+    Description:
+    Purpose of the stylesheet follows.
+    To change this template use Tools | Templates.
+*/
+ img {
+    float: right;
+    background-color: #f0fae2;
+}
+p {
+    text-indent: 50px;
+    font-size: 30px;
+    font-family: Arial;
+}
+ul {
+    font-size: 30px;
+    font-family: Arial;
+}
+p1 {
+    color: #cc0000;
+    font-size: 80;
+    float: right;
+    border: solid blue;
+    background: #add8e6;
+    height: 100px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 20px;
+}
+h2 {
+    font-size: 60px;
+    text-align: Center;
+}
+body {
+    background-color: #e5f5c4;
+}
+header {
+    font-size: 35px;
+    text-align: left;
+}
+#navbar {
+    text-align:center;
+}
+#navbar li {
+    display:inline-block;
+    border: 2px solid black;
+    padding: 5px;
+}

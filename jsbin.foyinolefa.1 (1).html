@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by anonymous (http://jsbin.com/foyinolefa/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>DNA Translator</title>
+</head>
+
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html"> Intro Page </a>
+            </li>
+            <li><a href="jsbin.foyinolefa.1 (1).html"> DNA to RNA Translator </a>
+            </li>
+            <li><a href="jsbin.gosohakaza.1 (1).html"> Calculator </a>
+            </li>
+            <li><a href="jsbin.qefericiku.1 (1).html"> Random History Project </a>
+            </li>
+            <li><a href="Maze Game (1).html"> Cursor Game </a>
+            </li>
+            <li><a href="jsbin.kawiru.1 (1).html"> Word Counter </a>
+            </li>
+            <li><a href="vindinium.html"> AI Bot </a>
+            </li>
+        </ul>
+    </div>
+    <!DOCTYPE html>
+    <!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2014 by anonymous (http://jsbin.com/rekeyufene/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+    <meta name="robots" content="noindex">
+    <html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>JS Bin</title>
+        <style id="jsbin-css">
+            #navbar {
+                text-align:center;
+            }
+            #navbar li {
+                display:inline-block;
+                border: 2px solid black;
+                padding: 5px;
+            }
+            button {
+                position: absolute;
+                top: 170px;
+                left: 380px;
+            }
+            h1 {
+                position: absolute;
+                left: 140px;
+                top: 20px;
+            }
+            textarea {
+                position: absolute;
+                top: 110px;
+            }
+            .RNA {
+                position: absolute;
+                top: 110px;
+                left: 480px;
+            }
+            #RNA {
+                position: absolute;
+                top: 20px;
+                left: 620px;
+            }
+            .Protien {
+                position: absolute;
+                top: 400px;
+                left: 460px;
+            }
+            #Protien {
+                position: absolute;
+                top: 310px;
+                left: 590px;
+            }
+            #clear {
+                position: absolute;
+                top: 200px;
+                left: 400px
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>DNA</h1>
+
+
+        <h1 id="RNA">RNA</h1>
+
+        <!--<h1 id="Protien">Protien</h1>-->
+        <textarea id="DNA2" cols="40" rows="10"></textarea>
+        <button id="transbut">Translate -></button>
+        <button id="clear">Clear</button>
+        <textarea id="RNA3" class="RNA" cols="40" rows="10"></textarea>
+        <!--<textarea class="Protien" cols="40" rows="10"></textarea>-->
+        <script id="jsbin-javascript">
+            var dna2 = document.getElementById("DNA2");
+            var transbut = document.getElementById("transbut");
+            var rna = document.getElementById("RNA3");
+            transbut.addEventListener("click", translate);
+            var a = document.createTextNode("a");
+            var u = document.createTextNode("u");
+            document.getElementById("clear").addEventListener("click", clear);
+
+            function clear() {
+                dna2.value = "";
+                rna.innerHTML = "";
+            }
+
+            function translate() {
+                var str = document.getElementById("DNA2").value;
+                var res = str.split("");
+                for(var i = 0; i < res.length; i++) {
+                    if(res[i] === "a") {
+                        rna.innerHTML += "U";
+                    }
+                    if(res[i] === "g") {
+                        rna.innerHTML += "C";
+                    }
+                    if(res[i] === "t") {
+                        rna.innerHTML += "A";
+                    }
+                    if(res[i] === "c") {
+                        rna.innerHTML += "G";
+                    }
+                    if(res[i] === "A") {
+                        rna.innerHTML += "U";
+                    }
+                    if(res[i] === "G") {
+                        rna.innerHTML += "C";
+                    }
+                    if(res[i] === "T") {
+                        rna.innerHTML += "A";
+                    }
+                    if(res[i] === "C") {
+                        rna.innerHTML += "G";
+                    }
+                }
+            }
+        </script>
+    </body>
+
+    </html>
+</body>
+
+</html>

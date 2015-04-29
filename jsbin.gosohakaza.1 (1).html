@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by anonymous (http://jsbin.com/gosohakaza/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Clicky Calculator</title>
+</head>
+
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html"> Intro Page </a>
+            </li>
+            <li><a href="jsbin.foyinolefa.1 (1).html"> DNA to RNA Translator </a>
+            </li>
+            <li><a href="jsbin.gosohakaza.1 (1).html"> Calculator </a>
+            </li>
+            <li><a href="jsbin.qefericiku.1 (1).html"> Random History Project </a>
+            </li>
+            <li><a href="Maze Game (1).html"> Cursor Game </a>
+            </li>
+            <li><a href="jsbin.kawiru.1 (1).html"> Word Counter </a>
+            </li>
+            <li><a href="vindinium.html"> AI Bot </a>
+            </li>
+        </ul>
+    </div>
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>Document</title>
+        <style id="jsbin-css">
+            body {
+                background-color: lightgreen;
+            }
+            #display {
+                width:162px;
+                height: 50px;
+                border: 1px solid black;
+                margin-bottom: 5px;
+                text-align:right;
+            }
+            .row {
+            }
+            .button {
+                line-height:50px;
+                background-color: #FF3D59;
+                display:inline-block;
+                height: 50px;
+                width: 50px;
+                border: 1px solid;
+                text-align:center;
+                /*text color*/
+                color:black;
+                transition: all 0.5s ease;
+                -webkit-border-radius: 10px;
+            }
+            .button:hover {
+                background-color: orange;
+            }
+            .opp {
+                /*color for +,- etc background*/
+                background-color: green;
+            }
+            #box1 {
+                text-align:center;
+                margin: auto;
+                width:350px;
+                border: 10px white solid;
+                position: relative;
+                left:40px;
+                -webkit-border-radius: 10px;
+            }
+            #navbar {
+                text-align:center;
+            }
+            #navbar li {
+                display:inline-block;
+                border: 2px solid black;
+                padding: 5px;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="display"></div>
+
+        <div class="row">
+            <div class="button" id="seven">7</div>
+            <div class="button" id="eight">8</div>
+            <div class="button" id="nine">9</div>
+            <div class="button opp" id="add">+</div>
+            <div class="button" id="clear">Clear</div>
+        </div>
+
+        <div class="row">
+            <div class="button" id="four">4</div>
+            <div class="button" id="five">5</div>
+            <div class="button" id="six">6</div>
+            <div class="button opp" id="subtract">-</div>
+            <div class="button opp" id="pi">3.14</div>
+            <!--<div class="button opp" id="sqrt">âˆš</div>type the square root here-->
+        </div>
+
+        <div class="row">
+            <div class="button" id="one">1</div>
+            <div class="button" id="two">2</div>
+            <div class="button" id="three">3</div>
+            <div class="button opp" id="multiply">*</div>
+        </div>
+
+        <div class="row">
+            <div class="button" id="zero">0</div>
+            <div class="button" id="dot">.</div>
+            <div class="button" id="equals">=</div>
+            <div class="button opp" id="divide">/</div>
+        </div>
+
+        <script src="script.js"></script>
+
+        <div id="box1" style="background-color:#00628B; color: white">
+
+            <h1 style="text-align:center">
+            <h1>Watermelon theme</h1>
+            <br></br>
+        </div>
+    </body>
+
+    </html>
+    <script id="jsbin-javascript">
+        var keys = document.querySelectorAll('div.button');
+        var output = document.getElementById("display");
+        var hasOpp = false;
+        var btnVal1 = 0;
+        var btnVal2 = 0;
+        var prevInput
+         console.log(keys);
+        for(var i = 0; i < keys.length; i++) {
+            keys[i].addEventListener("click", mathify, false);
+        };
+
+        function mathify() {
+            if(this.classList.contains("opp") && !isNaN(prevInput)) {
+                var btnVal = output.innerHTML;
+                output.insertAdjacentHTML('beforeend', this.innerHTML);
+                hasOpp = true;
+                prevInput = this.innerHTML;
+            } else if(this.innerHTML === "=") {
+                //code for equals
+                var equation = output.innerHTML;
+                var answer = eval(output.innerHTML)
+                output.innerHTML = answer;
+            } else if(this.innerHTML === "Clear") {
+                //code for clear
+                output.innerHTML = ""
+            } else if(!isNaN(this.innerHTML) || this.innerHTML == ".") {
+                output.insertAdjacentHTML('beforeend', this.innerHTML);
+                var btnVal = output.innerHTML;
+                prevInput = this.innerHTML;
+            }
+        };
+    </script>
+</body>
+
+</html>

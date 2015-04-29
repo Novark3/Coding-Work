@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+Created using JS Bin
+http://jsbin.com
+
+Copyright (c) 2015 by anonymous (http://jsbin.com/qefericiku/1/edit)
+
+Released under the MIT license: http://jsbin.mit-license.org
+-->
+<meta name="robots" content="noindex">
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Random History Idea</title>
+</head>
+
+<body>
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <link rel='stylesheet' href='style.css' />
+        <script src='script.js'></script>
+        <style id="jsbin-css">
+            p {
+                display:inline-block;
+            }
+            #navbar {
+                text-align:center;
+            }
+            #navbar li {
+                display:inline-block;
+                border: 2px solid black;
+                padding: 5px;
+            }
+            #swag {
+                width:450px;
+                border: 6px grey solid;
+                -webkit-border-radius: 10px;
+                text-align:center;
+            }
+            #btnSearch {
+                background: #3498db;
+                background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+                background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+                background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+                background-image: -o-linear-gradient(top, #3498db, #2980b9);
+                background-image: linear-gradient(to bottom, #3498db, #2980b9);
+                -webkit-border-radius: 28;
+                -moz-border-radius: 28;
+                border-radius: 28px;
+                font-family: Arial;
+                color: #ffffff;
+                font-size: 20px;
+                padding: 10px 20px 10px 20px;
+                text-decoration: none;
+            }
+            #btnSearch:hover {
+                background: #3cb0fd;
+                background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+                background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+                text-decoration: none;
+            }
+        </style>
+    </head>
+
+    <body style="background-color:
+        #FFD23D">
+
+        <input type="button" id="btnSearch" value="Random idea" onclick="GetValue() ;" />
+        <div id="swag" style="background-color:#00628B; color: white">
+            <p id="message">Press the button</p>
+            <p id="message2">for a</p>
+            <p id="message3">project idea</p>
+        </div>
+        <div id="navbar">
+            <ul>
+                <li><a href="index.html"> Intro Page </a>
+                </li>
+                <li><a href="jsbin.foyinolefa.1 (1).html"> DNA to RNA Translator </a>
+                </li>
+                <li><a href="jsbin.gosohakaza.1 (1).html"> Calculator </a>
+                </li>
+                <li><a href="jsbin.qefericiku.1 (1).html"> Random History Project </a>
+                </li>
+                <li><a href="Maze Game (1).html"> Cursor Game </a>
+                </li>
+                <li><a href="jsbin.kawiru.1 (1).html"> Word Counter </a>
+                </li>
+                <li><a href="vindinium.html"> AI Bot </a>
+                </li>
+            </ul>
+        </div>
+
+
+
+
+    </body>
+
+    </html>
+    <script id="jsbin-javascript">
+        function GetValue() {
+            var myarray = new Array("Do a project on Hitlers", "Do a project on Stalins", "Do a project on Mussolinis");
+            var random = myarray[Math.floor(Math.random() * myarray.length)];
+            document.getElementById("message").innerHTML = random;
+            var myarray2 = new Array(" Rise to", " lose");
+            var random2 = myarray2[Math.floor(Math.random() * myarray2.length)];
+            document.getElementById("message2").innerHTML = random2;
+            var myarray3 = new Array("Power", "Popularity");
+            var random3 = myarray3[Math.floor(Math.random() * myarray3.length)];
+            document.getElementById("message3").innerHTML = random3;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!--
+To change this template use Tools | Templates.
+-->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title></title>
+</head>
+
+<body>
+    <div id="navbar">
+        <ul>
+            <li><a href="index.html"> Intro Page </a>
+            </li>
+            <li><a href="jsbin.foyinolefa.1 (1).html"> DNA to RNA Translator </a>
+            </li>
+            <li><a href="jsbin.gosohakaza.1 (1).html"> Calculator </a>
+            </li>
+            <li><a href="jsbin.qefericiku.1 (1).html"> Random History Project </a>
+            </li>
+            <li><a href="Maze Game (1).html"> Cursor Game </a>
+            </li>
+            <li><a href="jsbin.kawiru.1 (1).html"> Word Counter </a>
+            </li>
+            <li><a href="vindinium.html"> AI Bot </a>
+            </li>
+        </ul>
+    </div>
+</body>
+<p>For Week 7 of the Computer Sciences Expeditions we choose to create AI's to compete against one another. These AI's were put into a competition using a game called <a href="http://vindinium.org/">Vindinium.</a>
+</p>
+
+<p>Vindinium is a game where people can make their own AI's and try to win competitions of getting mines, attacking one another, and getting the most gold. Everyone in our class took the time to code out their own bots in hopes that theirs would make it to the top so that they could brag to everyone.</p>
+<img src="http://stratosprovatopoulos.com/wp-content/uploads/2014/02/screenshot.png">
+
+<p><a href="vindinium.js">Here's my code if you want to read through it</a>
+</p>
+
+<p>If you don't want to read through it and all of its comments, then you can just keep on reading.</p>
+
+<p>The way that my bot is different from everyone else's is that my bot has a main board of what to do. Instead of having the robot scan through the entire code and having the conditions hiden amongst the code, I made a board full of if statements and else if statements. This makes it so that the robot only has to scroll through a small portion of code then execute the given function whether it be for health or attacking a certain player for mines.</p>
+
+<code id="green">if(bot.yourBot.life <= 30) { <br> 
+            health();<br>
+        } else if((bot.findDistance(myPos, closestTavern) === 2) && (bot.yourBot.life < 80)) {<br>
+            bot.goDir = bot.findPath(myPos, closestTavern);<br>
+        } else if(freeMinesLeft > .4) {<br>
+            mines();<br>
+        } else if(percentMinesOwned > .65) {<br>
+            health();<br>
+        } else if(enemyMines.length > 0 && ownsMore == false) {<br>
+            capEnemyMine();<br>
+        } else if(ownsMore == true) {<br>
+            strategicKill();<br>
+        } else if(availableEnemy === true) {<br>
+            attackEnemy();<br>
+        } else if(availableEnemy === false) {<br>
+            health();<br>
+        }</code>
+
+<p>The way that this code works is that it scrolls through this block of code and checks if any of the statements apply to itself. For instance, the first line of code says that if the bot's health is equal to or less than 30 then activate the function "health." Which basiaclly means go to a tavern and drink until his health is full.</p> 
+    <p>The 1st else if statement talks about how if the bot is next to a tavern and its health is lower than 80, than take a drink to top off the health.</p>
+    <p>These next else if statements are where things get interesting because the next three statements all involve capturing mines. The first else if statement in this group says that if there are more than 40% of mines left uncaptured then go capture them. </p>
+    <p>The second statement in this family states that if my bot owns 65% or more of all the mines on the field, then just stand next to a tavern and drink to keep your health at full.</p>
+    <p>The last statement in this family says that if the enemies have captured mines, go capture them for myself.</p>
+    <p>At the end of this block of code we have the code for killing other players for their mines since when you kill an enemy, you automatically take control of all the mines they owned.</p>
+    <p>At the first line of the "killing code," there is a statement that says, "If someone owns more mines than I do, go kill them and take all their things." Then the last two lines in the group just tell the bot to kill whoever is closest to him.</p>
+    <p>If you want to learn more about my code and go deeper into it, you can click the link to my code above and read through the comments as they are very descriptive and abundant.</p>
+</html>
+<style id="jsbin-css">
+    #navbar {
+        text-align:center;
+    }
+    #navbar li {
+        display:inline-block;
+        border: 2px solid black;
+        padding: 5px;
+    }
+    #green {
+        color: green
+    }
+</style>
